@@ -27,7 +27,7 @@ const RequestForm = ({encodedValue}) => {
         <Container>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="username" >
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Username</Form.Label>
                     <Form.Control type="text" placeholder="Enter username" onChange={(e)=>setUserName(e.target.value)}/>
                     <Form.Text className="text-muted">
                         We'll never share your details with anyone else.
