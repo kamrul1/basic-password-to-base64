@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Alert, Jumbotron } from "react-bootstrap";
+const { default: RequestForm } = require("./components/RequestForm");
+
 
 function App() {
+
+  const [response, setResponse] = useState('');
+
+  const updateUI = (text)=>{
+    setResponse(text);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+      <Jumbotron>
+        <h4> Makes Basic Authentication Header</h4>
+        {
+          response!=='' && (
+                  <Alert variant="success">
+                  {response}
+                  </Alert>
+          )
+        }
+      </Jumbotron>
+      <RequestForm encodedValue={updateUI}/>
+      </>
     </div>
   );
 }
