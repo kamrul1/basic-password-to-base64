@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Alert, Jumbotron, Button, Container } from "react-bootstrap";
+import { Jumbotron, Button, Container } from "react-bootstrap";
 import { FaGithub } from "react-icons/fa";
 import AlertCopy from "./components/AlertCopy";
 const { default: RequestForm } = require("./components/RequestForm");

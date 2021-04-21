@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useRef, useEffect} from 'react'
 import { Form, Button, Container } from 'react-bootstrap'
 
 const netlifyFunctionUrl = window.location + '.netlify/functions/base64Encode'
