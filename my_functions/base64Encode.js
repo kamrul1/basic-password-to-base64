@@ -12,19 +12,26 @@ exports.handler = async function (event, context) {
         statusCode:500,
         body: "Not processed, Netlify function is not working"
     }
-    console.log(event.httpMethod);
+
+    // console.log(event.httpMethod);
 
     if(event.httpMethod!=="POST"){
         return {...response, statusCode: 400, body:"This function only works via a post request"}
     };
 
     console.log(event.body);
+
+    if(event.body===undefined){
+        return  {...response, statusCode:400, body: "Payload is empty"}
+    }
+
     const {username, password} = JSON.parse(event.body);
 
     // let base64Script = base64.encode(userName+":"+password);
 
     let stringToEncode = utf8.encode(`${username}:${password}`);
-    console.log(stringToEncode);
+    
+    // console.log(stringToEncode);
 
     let reponseBody = JSON.stringify({
         "Authorization": "Basic "+base64.encode(stringToEncode)

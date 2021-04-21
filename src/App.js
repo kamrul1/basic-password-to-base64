@@ -2,7 +2,9 @@
 import { useState } from "react";
 import { Alert, Jumbotron, Button, Container } from "react-bootstrap";
 import { FaGithub } from "react-icons/fa";
+import AlertCopy from "./components/AlertCopy";
 const { default: RequestForm } = require("./components/RequestForm");
+
 
 
 function App() {
@@ -28,9 +30,9 @@ function App() {
         </Container>
           {
             response !== '' && (
-              <Alert variant="success">
-                {response}
-              </Alert>
+              <><br/>
+                <AlertCopy response={response} />
+              </>
             )
           }
         </Jumbotron>
