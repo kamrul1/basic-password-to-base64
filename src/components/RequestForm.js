@@ -10,7 +10,6 @@ const RequestForm = ({encodedValue}) => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         let payLoad = {username:_userName.current.value, password:_password.current.value}
-        console.log(payLoad);
         if(payLoad.username==="" || payLoad.password===""){
             return;
         }
